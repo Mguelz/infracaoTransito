@@ -26,19 +26,19 @@ public class Desafio1 {
 			if (pontosCNH == 3) {
 				System.out.println("Infração Leve ");
 				System.out.println("R$ 88,38 de multa ");
-				continuar = 2;
+				continuar = 0;
 			} else if (pontosCNH == 4) {
 				System.out.println("Infração Média");
 				System.out.println("R$ 130,16 de multa ");
-				continuar = 2;
+				continuar = 0;
 			} else if (pontosCNH == 5) {
 				System.out.println("Infração Grave ");
 				System.out.println("R$ 195,23 de multa ");
-				continuar = 2;
+				continuar = 0;
 			} else if (pontosCNH == 7) {
 				System.out.println("Infração Gravíssima ");
 				System.out.println("R$ 283,47 de multa ");
-				continuar = 2;
+				continuar = 0;
 			}
 			
 			if (pontosCNH != 3 && pontosCNH != 4 && pontosCNH != 5 && pontosCNH != 7) {
