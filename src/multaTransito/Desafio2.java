@@ -20,35 +20,47 @@ public class Desafio2 {
 		Scanner scanner = new Scanner(System.in);
 		byte qtdMultas;
 		int somaPontosCNH = 0, pontosCNH;
-		double infraLeve = 88.38, infraMedia = 130.16, infraGrave = 195.23, infraGravissima = 293.47; // valor das
-																										// infrações
+		double infraLeve = 88.38, infraMedia = 130.16, infraGrave = 195.23, infraGravissima = 293.47;
+
 		double valorTotalPagar = 0, valorTotalSomado = 0;
 		boolean continuar = false;
+		int posicaoMulta = 1;
 
+		/*
+		 * TODO ao usuario errar a quantidade de pontos na carteira, fazer ele repetir
+		 * até que ele acerte a quantidade de pontos certa e o "i" do loop FOR tem que
+		 * acompanhar, por exemplo, enquanto eu não inserir o 2º valor certo, apresentar
+		 * a mensagem "Quantos pontos na CNH você recebeu na multa 2" neste exato
+		 * momento o código segue pra frente, e não espera que o usuario arrume a
+		 * quantidade certa para seguir
+		 */
 		do {
 			System.out.println("Quantas multas você tomou ");
 			qtdMultas = scanner.nextByte();
 			for (int i = 1; i <= qtdMultas; i++) {
-				System.out.println("Quantos pontos na CNH você recebeu na multa " + i);
+				System.out.println("Quantos pontos na CNH você recebeu na multa " + posicaoMulta);
 				pontosCNH = scanner.nextInt();
 				somaPontosCNH += pontosCNH;
-				// valor total das multas
+
 				if (pontosCNH != 3 && pontosCNH != 4 && pontosCNH != 5 && pontosCNH != 7) {
 					System.out.println("Digite uma quantidade valida (3,4,5 ou 7) \n");
 					continuar = true;
-				}
-				if (pontosCNH == 3) {
+				} else if (pontosCNH == 3) {
 					valorTotalPagar = infraLeve;
 					valorTotalSomado += valorTotalPagar;
+					posicaoMulta++;
 				} else if (pontosCNH == 4) {
 					valorTotalPagar = infraMedia;
 					valorTotalSomado += valorTotalPagar;
+					posicaoMulta++;
 				} else if (pontosCNH == 5) {
 					valorTotalPagar = infraGrave;
 					valorTotalSomado += valorTotalPagar;
+					posicaoMulta++;
 				} else if (pontosCNH == 7) {
 					valorTotalPagar = infraGravissima;
 					valorTotalSomado += valorTotalPagar;
+					posicaoMulta++;
 				}
 			}
 		} while (continuar);
