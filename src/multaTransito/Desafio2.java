@@ -38,29 +38,34 @@ public class Desafio2 {
 			System.out.println("Quantas multas você tomou ");
 			qtdMultas = scanner.nextByte();
 			for (int i = 1; i <= qtdMultas; i++) {
-				System.out.println("Quantos pontos na CNH você recebeu na multa " + posicaoMulta);
+				System.out.println("Quantos pontos na CNH você recebeu na multa " + i);
 				pontosCNH = scanner.nextInt();
 				somaPontosCNH += pontosCNH;
 
 				if (pontosCNH != 3 && pontosCNH != 4 && pontosCNH != 5 && pontosCNH != 7) {
 					System.out.println("Digite uma quantidade valida (3,4,5 ou 7) \n");
 					continuar = true;
+					i--;
 				} else if (pontosCNH == 3) {
 					valorTotalPagar = infraLeve;
 					valorTotalSomado += valorTotalPagar;
 					posicaoMulta++;
+					continuar = false;
 				} else if (pontosCNH == 4) {
 					valorTotalPagar = infraMedia;
 					valorTotalSomado += valorTotalPagar;
 					posicaoMulta++;
+					continuar = false;
 				} else if (pontosCNH == 5) {
 					valorTotalPagar = infraGrave;
 					valorTotalSomado += valorTotalPagar;
 					posicaoMulta++;
+					continuar = false;
 				} else if (pontosCNH == 7) {
 					valorTotalPagar = infraGravissima;
 					valorTotalSomado += valorTotalPagar;
 					posicaoMulta++;
+					continuar = false;
 				}
 			}
 		} while (continuar);
